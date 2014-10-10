@@ -1,0 +1,723 @@
+# Spanish translation for openobject-addons
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the openobject-addons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-addons\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-08-14 13:09+0000\n"
+"PO-Revision-Date: 2014-09-30 10:47+0700\n"
+"Last-Translator: Pedro Manuel Baeza <pedro.baeza@gmail.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-08-16 06:55+0000\n"
+"X-Generator: Poedit 1.6.7\n"
+"Language: vi\n"
+
+#. module: crm_claim
+#: field:res.partner,claim_count:0
+msgid "# Claims"
+msgstr "# Khiếu nại"
+
+#. module: crm_claim
+#: field:crm.claim.report,email:0
+msgid "# Emails"
+msgstr "# Emails"
+
+#. module: crm_claim
+#: field:crm.claim.report,nbr:0
+msgid "# of Cases"
+msgstr "# Trường hợp"
+
+#. module: crm_claim
+#: code:addons/crm_claim/crm_claim.py:167
+#, python-format
+msgid "%s (copy)"
+msgstr "%s (sao chép)"
+
+#. module: crm_claim
+#: model:ir.actions.act_window,help:crm_claim.crm_case_categ_claim0
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                    Record and track your customers' claims. Claims may be "
+"linked to a sales order or a lot.You can send emails with attachments and "
+"keep the full history for a claim (emails sent, intervention type and so on)."
+"Claims may automatically be linked to an email address using the mail "
+"gateway module.\n"
+"                </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"Ghi lại và quản lý các khiếu nại của khách hàng. Việc yêu cầu có thể được "
+"liên kết với một hoặc nhiều đơn hàng. Bạn có thể gửi email với file đính kèm "
+"và lưu trữ lịch sử khiếu nại (gửi email, hình thức can thiệp, vv). Tuyên bố "
+"có thể tự động liên kết đến một email bằng cách sử dụng Module mail "
+"gateway.\n"
+"</p>\n"
+"            "
+
+#. module: crm_claim
+#: model:ir.actions.act_window,help:crm_claim.crm_claim_categ_action
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click to create a claim category.\n"
+"              </p><p>\n"
+"                Create claim categories to better manage and classify your\n"
+"                claims. Some example of claims can be: preventive action,\n"
+"                corrective action.\n"
+"              </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"Click để tạo danh mục khiếu nại.\n"
+"</p><p>\n"
+"Tạo danh mục để tổ chức lưu trữ và quản lý các khiếu nại tốt hơn.\n"
+"</p>\n"
+"            "
+
+#. module: crm_claim
+#: model:ir.actions.act_window,help:crm_claim.crm_claim_stage_act
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click to setup a new stage in the processing of the "
+"claims. \n"
+"              </p><p>\n"
+"                You can create claim stages to categorize the status of "
+"every\n"
+"                claim entered in the system. The stages define all the "
+"steps\n"
+"                required for the resolution of a claim.\n"
+"              </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"Click để thiết lập giai đoạn mới cho tiến trình xử lý khiếu nại.\n"
+"</p><p>\n"
+"Bạn có thể tạo ra các giai đoạn của đơn khiếu nại để phân loại tình trạng "
+"của mỗi yêu cầu vào hệ thống. Các giai đoạn xác định tất cả các bước cần "
+"thiết để giải quyết khiếu nại.\n"
+"</p>\n"
+"            "
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+msgid "Action Description..."
+msgstr "Mô tả hành động"
+
+#. module: crm_claim
+#: field:crm.claim,type_action:0
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+#: field:crm.claim.report,type_action:0
+msgid "Action Type"
+msgstr "Loại hành động"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+msgid "Actions"
+msgstr "Hành động"
+
+#. module: crm_claim
+#: field:crm.claim,active:0
+msgid "Active"
+msgstr "Hoạt động"
+
+#. module: crm_claim
+#: model:ir.model,name:crm_claim.model_crm_claim_report
+msgid "CRM Claim Report"
+msgstr "Báo cáo khiếu nại (CRM)"
+
+#. module: crm_claim
+#: model:ir.ui.menu,name:crm_claim.menu_crm_case_claim-act
+msgid "Categories"
+msgstr "Danh mục"
+
+#. module: crm_claim
+#: field:crm.claim,categ_id:0
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+#: field:crm.claim.report,categ_id:0
+msgid "Category"
+msgstr "Danh mục"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+#: model:ir.model,name:crm_claim.model_crm_claim
+#: model:ir.ui.menu,name:crm_claim.menu_config_claim
+msgid "Claim"
+msgstr "Khiếu nại"
+
+#. module: crm_claim
+#: model:ir.actions.act_window,name:crm_claim.crm_claim_categ_action
+msgid "Claim Categories"
+msgstr "Mục khiếu nại"
+
+#. module: crm_claim
+#: field:crm.claim,date:0
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+#: field:crm.claim.report,claim_date:0
+msgid "Claim Date"
+msgstr "Ngày khiếu nại"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+msgid "Claim Date by Month"
+msgstr "Ngày khiếu nại (theo tháng)"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+msgid "Claim Description"
+msgstr "Mô tả khiếu nại"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+msgid "Claim Month"
+msgstr "Tháng khiếu nại"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+msgid "Claim Reporter"
+msgstr "Người khiếu nại"
+
+#. module: crm_claim
+#: view:crm.claim.stage:crm_claim.crm_claim_stage_form
+msgid "Claim Stage"
+msgstr "Trạng thái khiếu nại"
+
+#. module: crm_claim
+#: view:crm.claim.stage:crm_claim.crm_claim_stage_tree
+#: model:ir.actions.act_window,name:crm_claim.crm_claim_stage_act
+msgid "Claim Stages"
+msgstr "Trạng thái khiếu nại"
+
+#. module: crm_claim
+#: field:crm.claim,name:0
+msgid "Claim Subject"
+msgstr "Tieu đề khiếu nại"
+
+#. module: crm_claim
+#: model:ir.model,name:crm_claim.model_crm_claim_stage
+msgid "Claim stages"
+msgstr "Trạng thái khiếu nại"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+msgid "Claim/Action Description"
+msgstr "Mô tả khiếu nại / hành động"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_calendar_view
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+#: view:crm.claim:crm_claim.crm_case_claims_tree_view
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_graph
+#: model:ir.actions.act_window,name:crm_claim.crm_case_categ_claim0
+#: model:ir.ui.menu,name:crm_claim.menu_crm_case_claims
+#: view:res.partner:crm_claim.view_claim_res_partner_info_form
+msgid "Claims"
+msgstr "Khiếu nại"
+
+#. module: crm_claim
+#: model:ir.actions.act_window,name:crm_claim.action_report_crm_claim
+#: model:ir.ui.menu,name:crm_claim.menu_report_crm_claim_tree
+msgid "Claims Analysis"
+msgstr "Phân tích khiếu nại"
+
+#. module: crm_claim
+#: field:crm.claim.report,date_closed:0
+msgid "Close Date"
+msgstr "Ngày đóng"
+
+#. module: crm_claim
+#: field:crm.claim,date_closed:0
+msgid "Closed"
+msgstr "Đã đóng"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+msgid "Closure"
+msgstr "Kết thúc"
+
+#. module: crm_claim
+#: field:crm.claim.stage,case_default:0
+msgid "Common to All Teams"
+msgstr "Cho tất cả các nhóm"
+
+#. module: crm_claim
+#: field:crm.claim,company_id:0
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+#: field:crm.claim.report,company_id:0
+msgid "Company"
+msgstr "Công ty"
+
+#. module: crm_claim
+#: model:crm.tracking.campaign,name:crm_claim.claim_source1
+msgid "Corrective"
+msgstr "Khắc phục"
+
+#. module: crm_claim
+#: selection:crm.claim,type_action:0 selection:crm.claim.report,type_action:0
+msgid "Corrective Action"
+msgstr "Hành động khắc phục"
+
+#. module: crm_claim
+#: field:crm.claim.report,create_date:0
+msgid "Create Date"
+msgstr "Ngày tạo"
+
+#. module: crm_claim
+#: field:crm.claim,create_uid:0 field:crm.claim.stage,create_uid:0
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: crm_claim
+#: field:crm.claim.stage,create_date:0
+msgid "Created on"
+msgstr "Tạo lúc"
+
+#. module: crm_claim
+#: field:crm.claim,create_date:0
+msgid "Creation Date"
+msgstr "Ngày tạo"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+msgid "Date Closed"
+msgstr "Ngày đóng"
+
+#. module: crm_claim
+#: help:crm.claim,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Ngày thông điệp cuối được đăng trên hồ sơ."
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+msgid "Dates"
+msgstr "Ngày"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+#: field:crm.claim,date_deadline:0 field:crm.claim.report,date_deadline:0
+msgid "Deadline"
+msgstr "Thời hạn"
+
+#. module: crm_claim
+#: field:crm.claim.report,delay_close:0
+msgid "Delay to close"
+msgstr "Đóng do chậm trễ"
+
+#. module: crm_claim
+#: field:crm.claim,description:0
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: crm_claim
+#: help:crm.claim,email_from:0
+msgid "Destination email for email gateway."
+msgstr "Email người nhận."
+
+#. module: crm_claim
+#: field:crm.claim,email_from:0
+msgid "Email"
+msgstr "Email"
+
+#. module: crm_claim
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "Extended Filters..."
+msgstr "Bộ lọc mở rộng..."
+
+#. module: crm_claim
+#: model:crm.case.categ,name:crm_claim.categ_claim1
+msgid "Factual Claims"
+msgstr "Khiếu nại đúng"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+msgid "Follow Up"
+msgstr "Theo dõi"
+
+#. module: crm_claim
+#: field:crm.claim,message_follower_ids:0
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: crm_claim
+#: model:ir.actions.act_window,help:crm_claim.action_report_crm_claim
+msgid ""
+"Have a general overview of all claims processed in the system by sorting "
+"them with specific criteria."
+msgstr ""
+"Nhìn tổng quan của tất cả các khiếu nại đã xử lí trong hệ thống bằng cách "
+"phân loại chúng với các tiêu chí cụ thể."
+
+#. module: crm_claim
+#: selection:crm.claim,priority:0 selection:crm.claim.report,priority:0
+msgid "High"
+msgstr "Cao"
+
+#. module: crm_claim
+#: help:crm.claim,message_summary:0
+msgid ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: crm_claim
+#: field:crm.claim,id:0 field:crm.claim.report,id:0 field:crm.claim.stage,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: crm_claim
+#: help:crm.claim,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Check nếu bạn cần chú ý tin nhắn mới"
+
+#. module: crm_claim
+#: help:crm.claim.stage,case_default:0
+msgid ""
+"If you check this field, this stage will be proposed by default on each "
+"sales team. It will not assign this stage to existing teams."
+msgstr ""
+"Nếu check, giai đoạn này sẽ được đề xuất mặc định trong mỗi nhóm bán hàng. "
+"Nó sẽ không chỉ định giai đoạn này đến các nhóm khác."
+
+#. module: crm_claim
+#: model:crm.claim.stage,name:crm_claim.stage_claim5
+msgid "In Progress"
+msgstr "Đang tiến hành"
+
+#. module: crm_claim
+#: field:crm.claim,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Là một người theo dõi"
+
+#. module: crm_claim
+#: field:crm.claim,message_last_post:0
+msgid "Last Message Date"
+msgstr "Tin nhắn cuối lúc"
+
+#. module: crm_claim
+#: field:crm.claim,write_uid:0 field:crm.claim.stage,write_uid:0
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: crm_claim
+#: field:crm.claim.stage,write_date:0
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối lúc"
+
+#. module: crm_claim
+#: help:crm.claim.stage,section_ids:0
+msgid ""
+"Link between stages and sales teams. When set, this limitate the current "
+"stage to the selected sales teams."
+msgstr ""
+"Liên kết giữa giai đoạn và Nhóm bán hang. Thiết lập các giai đoạn để Nhóm "
+"bán hang lựa chọn "
+
+#. module: crm_claim
+#: selection:crm.claim,priority:0 selection:crm.claim.report,priority:0
+msgid "Low"
+msgstr "Thấp"
+
+#. module: crm_claim
+#: field:crm.claim,message_ids:0
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: crm_claim
+#: help:crm.claim,message_ids:0
+msgid "Messages and communication history"
+msgstr "Tin nhắn và lịch sử trao đổi"
+
+#. module: crm_claim
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "Month of claim"
+msgstr "Tháng khiếu nại"
+
+#. module: crm_claim
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "My Case(s)"
+msgstr "Các trường hợp của tôi"
+
+#. module: crm_claim
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "My Company"
+msgstr "Công ty tôi"
+
+#. module: crm_claim
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "My Sales Team(s)"
+msgstr "Nhóm tôi"
+
+#. module: crm_claim
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "My company"
+msgstr "Công ty tôi"
+
+#. module: crm_claim
+#: model:crm.claim.stage,name:crm_claim.stage_claim1
+msgid "New"
+msgstr "Mới"
+
+#. module: crm_claim
+#: field:crm.claim,action_next:0
+msgid "Next Action"
+msgstr "Hành động kế tiếp"
+
+#. module: crm_claim
+#: field:crm.claim,date_action_next:0
+msgid "Next Action Date"
+msgstr "Ngày hành động tiếp theo"
+
+#. module: crm_claim
+#: code:addons/crm_claim/crm_claim.py:183
+#, python-format
+msgid "No Subject"
+msgstr "Không có chủ đề"
+
+#. module: crm_claim
+#: selection:crm.claim,priority:0 selection:crm.claim.report,priority:0
+msgid "Normal"
+msgstr "Bình thường"
+
+#. module: crm_claim
+#: help:crm.claim.report,delay_close:0
+msgid "Number of Days to close the case"
+msgstr "Số ngày để đóng trường hợp"
+
+#. module: crm_claim
+#: field:crm.claim.report,delay_expected:0
+msgid "Overpassed Deadline"
+msgstr "Vượt thời hạn"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+#: field:crm.claim,partner_id:0
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+#: field:crm.claim.report,partner_id:0
+#: model:ir.model,name:crm_claim.model_res_partner
+msgid "Partner"
+msgstr "Đối tác"
+
+#. module: crm_claim
+#: field:crm.claim,partner_phone:0
+msgid "Phone"
+msgstr "Số đện thoại:"
+
+#. module: crm_claim
+#: model:crm.case.categ,name:crm_claim.categ_claim3
+msgid "Policy Claims"
+msgstr "Chính sách khiếu nại"
+
+#. module: crm_claim
+#: model:crm.tracking.campaign,name:crm_claim.claim_source2
+msgid "Preventive"
+msgstr "Dự phòng"
+
+#. module: crm_claim
+#: selection:crm.claim,type_action:0 selection:crm.claim.report,type_action:0
+msgid "Preventive Action"
+msgstr "Hành động dự phòng"
+
+#. module: crm_claim
+#: field:crm.claim,priority:0
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+#: field:crm.claim.report,priority:0
+msgid "Priority"
+msgstr "Ưu tiên"
+
+#. module: crm_claim
+#: field:crm.claim,ref:0
+msgid "Reference"
+msgstr "Tham chiếu"
+
+#. module: crm_claim
+#: model:crm.claim.stage,name:crm_claim.stage_claim3
+msgid "Rejected"
+msgstr "Bị từ chối"
+
+#. module: crm_claim
+#: field:crm.claim,resolution:0
+msgid "Resolution"
+msgstr "Giải quyết"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+msgid "Resolution Actions"
+msgstr "Hành động giải quyết"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+msgid "Responsibilities"
+msgstr "Trách nhiệm"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+#: field:crm.claim,user_id:0
+msgid "Responsible"
+msgstr "Trách nhiệm"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+msgid "Responsible User"
+msgstr "Người chịu trách nhiệm "
+
+#. module: crm_claim
+#: help:crm.claim,section_id:0
+msgid ""
+"Responsible sales team. Define Responsible user and Email account for mail "
+"gateway."
+msgstr ""
+"Nhóm chịu trách nhiệm. Xác định người chịu trách nhiệm và email cho mail "
+"gateway."
+
+#. module: crm_claim
+#: field:crm.claim,cause:0
+msgid "Root Cause"
+msgstr "Nguyên nhân chính"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_form_view
+msgid "Root Causes"
+msgstr "Nguyên nhân chính"
+
+#. module: crm_claim
+#: field:crm.claim,section_id:0
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "Sales Team"
+msgstr "Nhóm bán hàng"
+
+#. module: crm_claim
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "Salesperson"
+msgstr "Người bán"
+
+#. module: crm_claim
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "Search"
+msgstr "Tìm kiếm"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+msgid "Search Claims"
+msgstr "Tìm khiếu nại"
+
+#. module: crm_claim
+#: field:crm.claim.report,section_id:0
+msgid "Section"
+msgstr "Bộ phận"
+
+#. module: crm_claim
+#: field:crm.claim.stage,section_ids:0
+msgid "Sections"
+msgstr "Bộ phận"
+
+#. module: crm_claim
+#: field:crm.claim.stage,sequence:0
+msgid "Sequence"
+msgstr "Trình tự"
+
+#. module: crm_claim
+#: model:crm.claim.stage,name:crm_claim.stage_claim2
+msgid "Settled"
+msgstr "Cố định"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+#: field:crm.claim,stage_id:0
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+#: field:crm.claim.report,stage_id:0
+msgid "Stage"
+msgstr "Giai đoạn"
+
+#. module: crm_claim
+#: field:crm.claim.stage,name:0
+msgid "Stage Name"
+msgstr "Tên giai đoạn"
+
+#. module: crm_claim
+#: model:ir.ui.menu,name:crm_claim.menu_claim_stage_view
+msgid "Stages"
+msgstr "Các giai đoạn"
+
+#. module: crm_claim
+#: field:crm.claim,message_summary:0
+msgid "Summary"
+msgstr "Tóm tắt"
+
+#. module: crm_claim
+#: help:crm.claim,email_cc:0
+msgid ""
+"These email addresses will be added to the CC field of all inbound and "
+"outbound emails for this record before being sent. Separate multiple email "
+"addresses with a comma"
+msgstr ""
+"Các địa chỉ email sẽ được thêm vào các trường CC của tất cả các email trước "
+"khi được gửi. Nhiều địa chỉ cách nhau bằng dấu phẩy"
+
+#. module: crm_claim
+#: field:crm.claim,user_fault:0
+msgid "Trouble Responsible"
+msgstr "Trách nhiệm về sự cố"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.crm_case_claims_tree_view
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+#: view:crm.claim.report:crm_claim.view_report_crm_claim_filter
+msgid "Type"
+msgstr "Loại"
+
+#. module: crm_claim
+#: view:crm.claim:crm_claim.view_crm_case_claims_filter
+msgid "Unassigned Claims"
+msgstr "Khiếu nại chưa giao xử lý"
+
+#. module: crm_claim
+#: field:crm.claim,message_unread:0
+msgid "Unread Messages"
+msgstr "Tin chưa đọc"
+
+#. module: crm_claim
+#: field:crm.claim,write_date:0
+msgid "Update Date"
+msgstr "Ngày cập nhật"
+
+#. module: crm_claim
+#: help:crm.claim.stage,sequence:0
+msgid "Used to order stages. Lower is better."
+msgstr "Dùng trạng thái đơn hàng. Thấp là ưu tiên"
+
+#. module: crm_claim
+#: field:crm.claim.report,user_id:0
+msgid "User"
+msgstr "Người dùng"
+
+#. module: crm_claim
+#: model:crm.case.categ,name:crm_claim.categ_claim2
+msgid "Value Claims"
+msgstr "Value khiếu nại"
+
+#. module: crm_claim
+#: field:crm.claim,email_cc:0
+msgid "Watchers Emails"
+msgstr "Giám sát Email"
+
+#. module: crm_claim
+#: field:crm.claim,website_message_ids:0
+msgid "Website Messages"
+msgstr "Tin nhắn qua website"
+
+#. module: crm_claim
+#: help:crm.claim,website_message_ids:0
+msgid "Website communication history"
+msgstr "Lịch sử trao đổi qua website"
