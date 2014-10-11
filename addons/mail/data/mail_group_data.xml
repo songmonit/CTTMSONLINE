@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="mail.group" id="group_all_employees">
+            <field name="name">Thành viên Công ty</field>
+            <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="description">Thông báo chung cho tất cả nhân viên.</field>
+        </record>
+
+        <!-- notify all employees of module installation -->
+        <record model="mail.message" id="module_install_notification" context="{'mail_notify_noemail': True}">
+            <field name="model">mail.group</field>
+            <field name="res_id" ref="mail.group_all_employees"/>
+            <field name="type">notification</field>
+            <field name="subtype_id" ref="mail.mt_comment"/>
+            <field name="subject">Chào mừng bạn tham gia CTTMS!</field>
+            <field name="body"><![CDATA[<p> Trang chủ sẽ tổng hợp các thông điệp bạn nhận được và các thông tin quan trọng về các tài liệu bạn theo dõi. </p>
+<p> Menu phía trên chứa tất cả các ứng dụng bạn đã cài đặt. Bạn có thể sử dụng menu <i> Cài đặt </i>, cài đặt nhiều ứng dụng, kích hoạt các tính năng khác hoặc phân quyền truy cập cho người dùng mới. </P>
+<p> Để thiết lập sở thích của riêng bạn (tên, chữ ký email, avatar), nhấp chuột vào icon góc trên bên phải. </p>]]></field>
+        </record>
+    </data>
+</openerp>
