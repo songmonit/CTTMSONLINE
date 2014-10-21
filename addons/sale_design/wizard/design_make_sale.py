@@ -65,7 +65,6 @@ class design_make_sale(osv.osv_memory):
         """
         if context is None:
             context = {}
-        # update context: if come from phonecall, default state values can make the quote crash lp:1017353
         context.pop('default_state', False)        
         
         case_obj = self.pool.get('crm.lead')
@@ -82,8 +81,8 @@ class design_make_sale(osv.osv_memory):
             fpos = partner.property_account_position and partner.property_account_position.id or False
             payment_term = partner.property_payment_term and partner.property_payment_term.id or False
             new_ids = []
-            for case in case_obj.browse(cr, uid, data, context=context):
-                case_sectionid=case.section_id and case.section_id.id or False
+            #for case in case_obj.browse(cr, uid, data, context=context):
+            #    case_sectionid=case.section_id and case.section_id.id or False
             for design in design_obj.browse(cr, uid, data, context=context):
                 if not partner and design.partner_id:
                     partner = design.partner_id
@@ -97,7 +96,7 @@ class design_make_sale(osv.osv_memory):
 
                 vals = {
                     'origin': _('Báo mẫu: %s') % (design.name),
-                    'section_id': case_sectionid,
+                    #'section_id': case_sectionid,
                     #'categ_ids': [(6, 0, [categ_id.id for categ_id in case.categ_ids])],
                     'baomau_id': design.id,
                     'partner_id': partner.id,

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-08-14 13:08+0000\n"
-"PO-Revision-Date: 2014-10-04 14:42+0700\n"
+"PO-Revision-Date: 2014-10-11 14:42+0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Vietnamese <vi@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1932,7 +1932,7 @@ msgstr "Việc cần làm"
 #: code:addons/mail/static/src/xml/mail.xml:123
 #, python-format
 msgid "To:"
-msgstr "Đến:"
+msgstr ""
 
 #. module: mail
 #: model:ir.actions.client,name:mail.action_mail_to_me_feeds

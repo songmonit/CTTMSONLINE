@@ -335,6 +335,17 @@
             </div>
         </div>
     </t>
+    
+     <!--
+        mail.compose_message.button_top_bar
+        render of the button on the user bar for open wizard compose message
+        -->
+    <t t-name="mail.ComposeMessageTopButton">
+        <li t-att-title='_t("Gửi email")' class="oe_topbar_item oe_topbar_compose_full_email">
+            <a class="fa fa-envelope" href="#">
+            </a>
+        </li>
+    </t>
 
     <!-- mail.thread.message.vote
         Template used to display Like/Unlike in a mail.message

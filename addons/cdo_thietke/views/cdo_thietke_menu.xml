@@ -27,14 +27,14 @@
         <menuitem 
         	name="Thiết kế"
             id="menu_cdo_thietke"
-            groups="base.group_user"
+            groups="cdo_thietke.group_thietke"
             sequence="25"/>
         	
 	  	<menuitem action="action_cdo_thietke_baomau_tree"
 	       	id="menu_cdo_thietke_baomau"
 	        name="Thiết kế"
 	        parent="menu_cdo_thietke"
-	        groups="base.group_user"
+	        groups="cdo_thietke.group_thietke"
 	        sequence="3"/>
 
 	    <menuitem action="action_cdo_thietke_baomau_tree"

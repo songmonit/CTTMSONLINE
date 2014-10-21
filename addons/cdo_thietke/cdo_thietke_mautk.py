@@ -81,8 +81,9 @@ class cdo_thietke_mautk(osv.osv):
     ]
     
     def date_change(self,cr,uid,ids,val_deadline,context=None):
+        if val_deadline==False: return True
         now =  datetime.now()
-        workingtime=datetime.strptime(val_deadline, '%Y-%m-%d %H:%M:%S')- now #.strftime('%Y/%m/%d %H:%M:%S')
+        workingtime=datetime.strptime(val_deadline, '%Y-%m-%d %H:%M:%S')- now
         workingtime_h=workingtime.days*24 + workingtime.seconds//3600
         if workingtime_h<1:
             raise osv.except_osv(u'Thay đổi thời hạn không được lưu!', u'CTTMS chỉ chấp nhận thay đổi từ 1h trở lên so với hiện tại.')

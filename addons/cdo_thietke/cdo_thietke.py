@@ -16,7 +16,7 @@ class cdo_thietke_baomau(osv.osv):
               'partner_id':fields.many2one('res.partner', u'Khách hàng', track_visibility='onchange', select=True, help="Báo mẫu cho khách hàng nào?."),
               'user_id':fields.many2one('res.users', u'Người yêu cầu', help='Nhân viên phụ trách báo mẫu cho khách hàng.', track_visibility='onchange'),
               'designer_id':fields.many2one('res.users', u'NV thiết kế', help='Nhân viên phụ trách thiết kế chính.', track_visibility='onchange'),
-              'name': fields.char('Tiêu đề', size=200,required=True, translate=True, track_visibility='onchange'),
+              'name': fields.char(u'Tên', size=200,required=True, translate=True, track_visibility='onchange'),
               'date_deadline_baomau': fields.datetime(u'Thời hạn báo mẫu', track_visibility='onchange'),
               'date_deadline_baogia': fields.datetime(u'Thời hạn báo giá', track_visibility='onchange'),
               'date_deadline':fields.datetime(u'Ngày lắp đặt', track_visibility='onchange'),

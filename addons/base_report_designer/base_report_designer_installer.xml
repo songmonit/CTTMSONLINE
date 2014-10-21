@@ -2,13 +2,13 @@
 <openerp>
     <data>
         <record id="view_report_designer_installer" model="ir.ui.view">
-            <field name="name">Form View: Odoo Report Designer Installation</field>
+            <field name="name">Form View: CTTMS Report Designer Installation</field>
             <field name="model">base_report_designer.installer</field>
             <field name="inherit_id" ref="base.res_config_installer"/>
             <field name="arch" type="xml">
                 <data>
                     <form position="attributes">
-                        <attribute name="string">Odoo Report Designer Configuration</attribute>
+                        <attribute name="string">CTTMS Report Designer Configuration</attribute>
                     </form>
                     <separator string="title" position="before">
                         <label string="This plug-in allows you to create/modify Odoo Reports into OpenOffice Writer."/>
@@ -30,13 +30,13 @@
                         </group>
                     </xpath>
                     <separator string="title" position="attributes">
-                        <attribute name="string">Odoo Report Designer</attribute>
+                        <attribute name="string">CTTMS Report Designer</attribute>
                     </separator>
                 </data>
             </field>
         </record>
         <record id="action_report_designer_installer" model="ir.actions.act_window">
-            <field name="name">Odoo Report Designer Installation</field>
+            <field name="name">CTTMS Report Designer Installation</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">base_report_designer.installer</field>
             <field name="view_id" ref="view_report_designer_installer"/>
@@ -50,7 +50,7 @@
             <field name="type">automatic</field>
         </record>
         <record id="action_report_designer_wizard" model="ir.actions.act_window">
-            <field name="name">Odoo Report Designer</field>
+            <field name="name">CTTMS Report Designer</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">base_report_designer.installer</field>
             <field name="view_id" ref="view_report_designer_installer"/>
