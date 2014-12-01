@@ -7,48 +7,65 @@
             <t t-call="report.external_layout">
                 <div class="page">
                     <div class="oe_structure"/>
+                    <h5 class="text-right"><strong>Số phiếu: <span t-field="o.name"/></strong></h5>
+                    <h3 class="text-center"><strong>YÊU CẦU BÁO GIÁ</strong></h3>
 
                     <div class="row mt32 mb32">
-                        <div class="col-xs-6">
-                            Shipping address :<br/>
-                            <div t-if="o.dest_address_id">
-                                <div t-field="o.dest_address_id" 
-                                    t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
-                                <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
-                            </div>
-                            <div t-if="o.picking_type_id.warehouse_id">
-                                <span t-field="o.picking_type_id.warehouse_id.name"/>
-                                <div t-field="o.picking_type_id.warehouse_id.partner_id" 
-                                    t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
-                                <p t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
+                        <div class="col-xs-12">
+                        	<div>
+                        		<strong>Kính gửi: <span t-field="o.partner_id.name"/></strong>
+                        		<p style="margin:0 10px 0 68px">Địa chỉ: <span t-field="o.partner_id.street"/>, <span t-field="o.partner_id.city"/>, <span t-field="o.partner_id.state_id.name"/></p>
+                        		<p style="margin:0 10px 0 68px">Điện thoại: <span t-field="o.partner_id.phone"/><span style="margin:0 30px"/>Fax:<span t-field="o.partner_id.fax"/></p>
+                           	</div>
+                        </div>
+                        <div class="col-xs-12">
+                        	<br/>
+                        	<p>Địa chỉ giao hàng:</p>
+                        	<div t-if="o.dest_address_id">
+                        		<p style="margin:0 10px 0 68px"><span t-field="o.dest_address_id.name"/></p>
+                        		<p style="margin:0 10px 0 68px">Địa chỉ: <span t-field="o.dest_address_id.street"/>, <span t-field="o.dest_address_id.city"/>, <span t-field="o.dest_address_id.state_id.name"/></p>
+                        		<p style="margin:0 10px 0 68px">Điện thoại: <span t-field="o.dest_address_id.phone"/><span style="margin:0 30px"/>Fax:<span t-field="o.dest_address_id.fax"/></p>
+                        		<p style="margin:0 10px 0 68px" t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
+                           	</div>
+                           	 <div t-if="o.picking_type_id.warehouse_id">
+                                <span style="margin:0 0 0 68px" t-field="o.picking_type_id.warehouse_id.name"/> - <span t-field="o.picking_type_id.warehouse_id.partner_id.name"/>
+                                <p style="margin:0 10px 0 68px">Địa chỉ: <span t-field="o.picking_type_id.warehouse_id.partner_id.street"/>, <span t-field="o.picking_type_id.warehouse_id.partner_id.city"/>, <span t-field="o.picking_type_id.warehouse_id.partner_id.state_id.name"/></p>
+                        		<p style="margin:0 10px 0 68px">Điện thoại: <span t-field="o.picking_type_id.warehouse_id.partner_id.phone"/><span style="margin:0 30px"/>Fax:<span t-field="o.picking_type_id.warehouse_id.partner_id.fax"/></p>
+                        		<p style="margin:0 10px 0 68px" t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></p>
                             </div>
                         </div>
-                        <div class="col-xs-5 col-xs-offset-1">
-                            <div t-field="o.partner_id" 
-                                t-field-options='{"widget": "contact", "fields": ["address", "name", "phone", "fax"], "no_marker": true}'/>
+                        
+                        <div class="col-xs-12">
+                            <br/>
+                            Chúng tôi đang có nhu cầu nhập các mặt hàng sau. Quý Công ty vui lòng gửi báo giá tốt nhất theo danh sách sau: 
                         </div>
                     </div>
 
-                    <h2>Request for Quotation <span t-field="o.name"/></h2>
-
-                    <table class="table table-condensed">
+                    <table class="table table-bordered text-center">
                         <thead>
                             <tr>
-                                <th><strong>Description</strong></th>
-                                <th class="text-center"><strong>Expected Date</strong></th>
-                                <th class="text-right"><strong>Qty</strong></th>
+                                <th class="text-center"><strong>STT</strong></th>
+                                <th class="text-center"><strong>Ngày dự kiến</strong></th>
+                                <th><strong>Tên hàng hóa / Mô tả</strong></th>
+                                <th class="text-right"><strong>Số lượng</strong></th>
+                                <th class="text-right"><strong>ĐVT</strong></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr t-foreach="o.order_line" t-as="order_line">
-                                <td>
-                                    <span t-field="order_line.name"/>
-                                </td>
                                 <td class="text-center">
+                                    <p><t t-esc="order_line_index+1"/></p>
+                                </td>
+                                <td class="text-left">
                                     <span t-field="order_line.date_planned"/>
+                                </td>
+                                <td class="text-left">
+                                    <span t-field="order_line.name"/>
                                 </td>
                                 <td class="text-right">
                                     <span t-field="order_line.product_qty"/>
+                                </td>
+                                <td class="text-right">
                                     <span t-field="order_line.product_uom" groups="product.group_uom"/>
                                 </td>
                             </tr>
@@ -56,7 +73,7 @@
                     </table>
 
                     <p t-field="o.notes"/>
-                    <span>Regards,</span>
+                    <span>Trân trọng kính chào,</span>
                     <span t-field="user.signature"/>
 
                     <div class="oe_structure"/>

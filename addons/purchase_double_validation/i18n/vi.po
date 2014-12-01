@@ -1,0 +1,39 @@
+# Spanish translation for openobject-addons
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the openobject-addons package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: openobject-addons\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-08-14 13:09+0000\n"
+"PO-Revision-Date: 2014-11-27 09:36+0700\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: VN <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-08-15 07:44+0000\n"
+"X-Generator: Poedit 1.6.7\n"
+"Language: vi\n"
+
+#. module: purchase_double_validation
+#: help:purchase.config.settings,limit_amount:0
+msgid "Amount after which validation of purchase is required."
+msgstr "Số tiền sau yêu cầu phải được phê duyệt"
+
+#. module: purchase_double_validation
+#: view:purchase.order:purchase_double_validation.purchase_order_search_inherit
+msgid "Purchase orders which are not approved yet."
+msgstr "Yêu cầu mua hàng chưa được phê duyệt "
+
+#. module: purchase_double_validation
+#: view:purchase.order:purchase_double_validation.purchase_order_search_inherit
+msgid "To Approve"
+msgstr "Duyệt"
+
+#. module: purchase_double_validation
+#: field:purchase.config.settings,limit_amount:0
+msgid "limit to require a second approval"
+msgstr "Giới hạn yêu cầu xét duyệt 2 cấp"
