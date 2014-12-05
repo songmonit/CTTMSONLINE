@@ -708,41 +708,37 @@ class BaseModel(object):
             manual_fields = cr.dictfetchall()
 
         for field in manual_fields:
-            if field['name'] in cls._columns:
+            if field['name'] in cls._fields:
                 continue
             attrs = {
+                'manual': True,
                 'string': field['field_description'],
                 'required': bool(field['required']),
                 'readonly': bool(field['readonly']),
-                'domain': eval(field['domain']) if field['domain'] else None,
-                'size': field['size'] or None,
-                'ondelete': field['on_delete'],
-                'translate': (field['translate']),
-                'manual': True,
-                '_prefetch': False,
-                #'select': int(field['select_level'])
             }
-            if field['serialization_field_id']:
-                cr.execute('SELECT name FROM ir_model_fields WHERE id=%s', (field['serialization_field_id'],))
-                attrs.update({'serialization_field': cr.fetchone()[0], 'type': field['ttype']})
-                if field['ttype'] in ['many2one', 'one2many', 'many2many']:
-                    attrs.update({'relation': field['relation']})
-                cls._columns[field['name']] = fields.sparse(**attrs)
-            elif field['ttype'] == 'selection':
-                cls._columns[field['name']] = fields.selection(eval(field['selection']), **attrs)
-            elif field['ttype'] == 'reference':
-                cls._columns[field['name']] = fields.reference(selection=eval(field['selection']), **attrs)
+            # FIXME: ignore field['serialization_field_id']
+            if field['ttype'] in ('char', 'text', 'html'):
+                attrs['translate'] = bool(field['translate'])
+                attrs['size'] = field['size'] or None
+            elif field['ttype'] in ('selection', 'reference'):
+                attrs['selection'] = eval(field['selection'])
             elif field['ttype'] == 'many2one':
-                cls._columns[field['name']] = fields.many2one(field['relation'], **attrs)
+                attrs['comodel_name'] = field['relation']
+                attrs['ondelete'] = field['on_delete']
+                attrs['domain'] = eval(field['domain']) if field['domain'] else None
             elif field['ttype'] == 'one2many':
-                cls._columns[field['name']] = fields.one2many(field['relation'], field['relation_field'], **attrs)
+                attrs['comodel_name'] = field['relation']
+                attrs['inverse_name'] = field['relation_field']
+                attrs['domain'] = eval(field['domain']) if field['domain'] else None
             elif field['ttype'] == 'many2many':
+                attrs['comodel_name'] = field['relation']
                 _rel1 = field['relation'].replace('.', '_')
                 _rel2 = field['model'].replace('.', '_')
-                _rel_name = 'x_%s_%s_%s_rel' % (_rel1, _rel2, field['name'])
-                cls._columns[field['name']] = fields.many2many(field['relation'], _rel_name, 'id1', 'id2', **attrs)
-            else:
-                cls._columns[field['name']] = getattr(fields, field['ttype'])(**attrs)
+                attrs['relation'] = 'x_%s_%s_%s_rel' % (_rel1, _rel2, field['name'])
+                attrs['column1'] = 'id1'
+                attrs['column2'] = 'id2'
+                attrs['domain'] = eval(field['domain']) if field['domain'] else None
+            cls._add_field(field['name'], Field.by_type[field['ttype']](**attrs))
 
     @classmethod
     def _init_constraints_onchanges(cls):
@@ -2923,11 +2919,6 @@ class BaseModel(object):
                 res[col] = (table, cls._inherits[table], other._inherit_fields[col][2], other._inherit_fields[col][3])
         cls._inherit_fields = res
         cls._all_columns = cls._get_column_infos()
-
-        # interface columns with new-style fields
-        for attr, column in cls._columns.items():
-            if attr not in cls._fields:
-                cls._add_field(attr, column.to_field())
 
         # interface inherited fields with new-style fields (note that the
         # reverse order is for being consistent with _all_columns above)
@@ -5297,20 +5288,22 @@ class BaseModel(object):
     # Dirty flag, to mark records modified (in draft mode)
     #
 
-    @property
-    def _dirty(self):
+    #@property
+    def _is_dirty(self):
         """ Return whether any record in `self` is dirty. """
         dirty = self.env.dirty
         return any(record in dirty for record in self)
 
-    @_dirty.setter
-    def _dirty(self, value):
-        """ Mark the records in `self` as dirty. """
-        if value:
-            map(self.env.dirty.add, self)
-        else:
-            map(self.env.dirty.discard, self)
+    def _get_dirty(self):
+        """ Return the list of field names for which `self` is dirty. """
+        dirty = self.env.dirty
+        return list(dirty.get(self, ()))
 
+    def _set_dirty(self, field_name):
+        """ Mark the records in `self` as dirty for the given `field_name`. """
+        dirty = self.env.dirty
+        for record in self:
+            dirty[record].add(field_name)
     #
     # "Dunder" methods
     #
@@ -5711,7 +5704,7 @@ class BaseModel(object):
                     field = self._fields[name]
                     newval = record[name]
                     if field.type in ('one2many', 'many2many'):
-                        if newval != oldval or newval._dirty:
+                        if newval != oldval or newval._is_dirty():
                             # put new value in result
                             result['value'][name] = field.convert_to_write(
                                 newval, record._origin, subfields.get(name),

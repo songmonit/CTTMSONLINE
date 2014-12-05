@@ -131,7 +131,7 @@ class im_chat_session(osv.Model):
                 self.pool['bus.bus'].sendmany(cr, uid, notifications)
                 # send a message to the conversation
                 user = self.pool['res.users'].read(cr, uid, user_id, ['name'], context=context)
-                self.pool["im_chat.message"].post(cr, uid, uid, session.uuid, "meta", user['name'] + " joined the conversation.", context=context)
+                self.pool["im_chat.message"].post(cr, uid, uid, session.uuid, "meta", user['name'] + " đã tham gia thảo luận.", context=context)
 
     def get_image(self, cr, uid, uuid, user_id, context=None):
         """ get the avatar of a user in the given session """
@@ -245,7 +245,7 @@ class im_chat_presence(osv.Model):
     _name = 'im_chat.presence'
 
     _columns = {
-        'user_id' : fields.many2one('res.users', 'Users', required=True, select=True),
+        'user_id' : fields.many2one('res.users', 'Users', required=True, select=True, ondelete="cascade"),
         'last_poll': fields.datetime('Last Poll'),
         'last_presence': fields.datetime('Last Presence'),
         'status' : fields.selection([('online','Online'), ('away','Away'), ('offline','Offline')], 'IM Status'),

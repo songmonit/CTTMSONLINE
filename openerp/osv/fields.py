@@ -120,9 +120,8 @@ class _column(object):
         for a in args:
             setattr(self, a, args[a])
 
-        # prefetch only if self._classic_write, not self.groups, and not
-        # self.deprecated
-        if not self._classic_write or self.deprecated:
+        # prefetch only if _classic_write, not deprecated and not manual
+        if not self._classic_write or self.deprecated or self.manual:
             self._prefetch = False
 
     def to_field(self):
