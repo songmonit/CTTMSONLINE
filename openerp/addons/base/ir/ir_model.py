@@ -436,6 +436,7 @@ class ir_model_fields(osv.osv):
 
             for item in self.browse(cr, user, ids, context=context):
                 obj = self.pool.get(item.model)
+                field = getattr(obj, '_fields', {}).get(item.name)
 
                 if item.state != 'manual':
                     raise except_orm(_('Error!'),
@@ -471,13 +472,13 @@ class ir_model_fields(osv.osv):
 
                 # We don't check the 'state', because it might come from the context
                 # (thus be set for multiple fields) and will be ignored anyway.
-                if obj is not None:
+                if obj is not None and field is not None:
                     models_patch.setdefault(obj._name, (obj,[]))
                     # find out which properties (per model) we need to update
                     for field_name, field_property, set_fn in model_props:
                         if field_name in vals:
                             property_value = set_fn(vals[field_name])
-                            if getattr(obj._columns[item.name], field_property) != property_value:
+                            if getattr(field, prop_name) != prop_value:
                                 models_patch[obj._name][1].append((final_name, field_property, property_value))
                         # our dict is ready here, but no properties are changed so far
 

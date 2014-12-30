@@ -247,6 +247,9 @@
                                 <field string="List of Variants" name="product_variant_count" widget="statinfo" />
                             </button>
                         </div>
+                        <p class="oe_grey">
+                            <strong>Cảnh báo</strong>: Thêm hoặc xóa thuộc tính, hệ thống sẽ xóa và tạo lại các biến nên các cấu hình có thể bị mất
+                        </p>
                         <field name="attribute_line_ids" widget="one2many_list" context="{'show_attribute': False}">
                             <tree string="Variants" editable="bottom">
                                 <field name="attribute_id"/>

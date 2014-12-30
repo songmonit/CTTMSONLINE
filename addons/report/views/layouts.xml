@@ -61,13 +61,13 @@
     <div class="header">
         <div class="row">
             <div class="col-xs-2">
-                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 45px;"/>
+                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 90px;"/>
             </div>
             <div class="col-xs-10">
             	<div>
                 	<span t-field="company.partner_id.name"/>
                     <p style="margin:0"><span t-field="company.partner_id.street"/>, <span t-field="company.partner_id.city"/>, <span t-field="company.partner_id.state_id.name"/></p>
-                    <p style="margin:0">ĐT: <span t-field="company.partner_id.phone"/><span style="margin:0 30px"/>Fax:<span t-field="company.partner_id.fax"/></p>
+                    <p style="margin:0">ĐT: <span t-field="company.partner_id.phone"/><span style="margin:0 25px"/>Fax:<span t-field="company.partner_id.fax"/></p>
               	</div>
             </div>
             <!-- <div class="col-xs-9 text-right" style="margin-top:20px;" t-field="company.rml_header1"/> -->

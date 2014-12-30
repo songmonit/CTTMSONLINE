@@ -20,7 +20,7 @@
                         </div>
                         <div class="col-xs-12">
                         	<br/>
-                        	<p>Địa chỉ giao hàng:</p>
+                        	<strong>Địa chỉ giao hàng:</strong>
                         	<div t-if="o.dest_address_id">
                         		<p style="margin:0 10px 0 68px"><span t-field="o.dest_address_id.name"/></p>
                         		<p style="margin:0 10px 0 68px">Địa chỉ: <span t-field="o.dest_address_id.street"/>, <span t-field="o.dest_address_id.city"/>, <span t-field="o.dest_address_id.state_id.name"/></p>
