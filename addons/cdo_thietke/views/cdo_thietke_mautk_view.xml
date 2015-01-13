@@ -57,13 +57,10 @@
 		                    <newline/>
 		                    <field name="description" placeholder="Thông tin hoặc yêu cầu thêm về phương án thiết kế" attrs="{'readonly': [('state','in',('cancel','done'))]}"/>
 		                	<notebook>
-		                		<page string="Vật liệu">
-		                			
-		                		</page>
 		                	</notebook>
 		                	
 		                	<footer>
-                </footer>
+                			</footer>
 		                	  
 		                </sheet>
 		                <div class="oe_chatter">

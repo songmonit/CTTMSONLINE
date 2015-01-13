@@ -25,6 +25,7 @@
             <script type="text/javascript" src="/web/static/src/js/tour.js"></script>
 
             <link rel="stylesheet" href="/web/static/lib/fontawesome/css/font-awesome.css"/>
+            
         </template>
 
         <template id="jqueryui_conflict" name="jquery.ui.conflict">

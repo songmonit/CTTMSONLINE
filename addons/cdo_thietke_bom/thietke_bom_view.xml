@@ -2,21 +2,18 @@
 <openerp>
     <data>
     		<record model="ir.ui.view" id="view_cdo_thietke_mautk_images_inherit_form">
-                <field name="name">cdo_thietke.mautk_images_inherit.form</field>
+                <field name="name">mautk_bom_inherit.form</field>
                 <field name="model">cdo_thietke.mautk</field>
                 <field name="type">form</field>
                 <field name="priority">1</field>
-                <field name="inherit_id" ref="view_cdo_thietke_mautk_form"/>
+                <field name="inherit_id" ref="cdo_thietke.view_cdo_thietke_mautk_form"/>
                 <field name="arch" type="xml">
                 	<notebook>
-                    	<page string="Files báo mẫu" name="images">
+                    	<page string="Vật liệu (BoM)" name="BoM">
 		                    <xpath expr="//page[@name='images']" position="inside">
-			                	<field name="mautk_image_ids" nolabel="1" widget="one2many_list">
-			                       	<tree string="Pictures" editable="bottom">
-			                       		<field name="file_name" invisible="1"/>
-			                       		<field name="image" widget="image" filename="file_name" width="70" class="cdo_img_400"/>
+			                	<field name="bom_id" nolabel="1" widget="many2one_list">
+			                       	<tree string="NVL" editable="bottom">
 			                       		<field name="name"/>
-			                       		<field name="description"/>
 			                       	</tree>
 			                    </field>
 			                </xpath>

@@ -10,15 +10,15 @@
                 <field name="arch" type="xml">
                 	<notebook>
                     	<page string="Hình ảnh khảo sát" name="images">
-		                    <xpath expr="//page[@name='images']" position="inside">
+		                    <xpath expr="//page[@name='Thông tin']" position="inside">
 			                	<field name="image_ids" nolabel="1" widget="one2many_list">
-			                       	<tree string="Pictures" editable="bottom">
+			                       	<tree string="Pictures" editable="top">
 			                       		<field name="file_name" invisible="1"/>
-			                       		<field name="image" widget="image" filename="file_name" width="150" height="auto" class="cdo_img_400"/>
-			                       		<field name="description" style="width=60%"/>
+			                       		<field name="image" widget="image" filename="file_name" width="70px" class="cdo_img_400"/>
+			                       		<field name="description" style="width:69%"/>
 			                       	</tree>
-			                       	<form>
-			                       		<field name="image" widget="image" width="150" height="auto" class="cdo_img_400"/>
+			                       	<form  string="Pictures">
+			                       		<field name="image" widget="image" with="150" class="cdo_img_400"/>
 			                       		<field name="description"/>
 			                       	</form>
 			                    </field>

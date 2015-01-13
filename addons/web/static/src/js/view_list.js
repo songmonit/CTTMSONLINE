@@ -1536,9 +1536,11 @@ instance.web.ListView.Groups = instance.web.Class.extend( /** @lends instance.we
         });
     },
     setup_resequence_rows: function (list, dataset) {
-        // drag and drop enabled if list is not sorted and there is a
-        // visible column with @widget=handle or "sequence" column in the view.
-        if ((dataset.sort && dataset.sort())
+        // drag and drop enabled if list is not sorted (unless it is sorted by
+        // sequence (ASC)), and there is a visible column with @widget=handle
+        // or "sequence" column in the view.
+        if ((dataset.sort && dataset.sort() && dataset.sort() !== 'sequence'
+            && dataset.sort() !== 'sequence ASC')
             || !_(this.columns).any(function (column) {
                     return column.widget === 'handle'
                         || column.name === 'sequence'; })) {
@@ -2151,6 +2153,7 @@ instance.web.list.columns = new instance.web.Registry({
     'field.progressbar': 'instance.web.list.ProgressBar',
     'field.handle': 'instance.web.list.Handle',
     'button': 'instance.web.list.Button',
+    'field.image': 'instance.web.list.FieldBinaryImage',//cdo
     'field.many2onebutton': 'instance.web.list.Many2OneButton',
     'field.reference': 'instance.web.list.Reference',
     'field.many2many': 'instance.web.list.Many2Many'
@@ -2317,6 +2320,49 @@ instance.web.list.Binary = instance.web.list.Column.extend({
         });
     }
 });
+//cdo begin
+instance.web.list.FieldBinaryImage = instance.web.list.Column.extend({
+       /**
+     * Return a image to the binary field of specified as widget image</br>
+	*
+     * @private
+     */
+    _format: function (row_data, options) {
+    	 var text = _t("cttms");
+    	var placeholder= "/web/static/src/img/placeholder.png";
+        var value = row_data[this.id].value;
+        var download_url;
+        var image_data;
+        
+        if (value && value.substr(0, 10).indexOf(' ') == -1) {
+        	image_data = "data:image/png;base64," + value;
+        	download_url = "data:application/octet-stream;base64," + value;
+       }
+        else {
+               image_data = placeholder;
+               download_url = instance.session.url('/web/binary/saveas', {model: options.model, field: this.id, id: options.id});
+               if (this.filename) {
+                   download_url += '&filename_field=' + this.filename;
+               }
+        }
+        if (this.filename && row_data[this.filename]) {
+            text = _.str.sprintf(_t("%s"), instance.web.format_value(
+                    row_data[this.filename].value, {type: 'char'}));
+        }
+        //$("a").click(function(){
+        //	$(this).attr("href",image_data).attr("download",text);
+        //	return false;
+        //});
+       return _.template('<a data-lightbox="width:1000;height:600;" href="<%-href%>" download="<%-text%>"><%-text%> (<%-size%>)<br/><image src="<%-src%>" style="max-width:150px; height:auto;"/></a>', {
+    	//   return _.template('<a id="image_download" href="#"><%-text%> (<%-size%>)<image src="<%-src%>" style="max-width:350px; height:auto;"/></a>', {
+            src: image_data,
+            href:download_url,
+            text: text,
+            size: instance.web.binary_to_binsize(value),
+       });
+    }
+});
+//cdo end
 instance.web.list.Char = instance.web.list.Column.extend({
     replacement: '*',
     /**
